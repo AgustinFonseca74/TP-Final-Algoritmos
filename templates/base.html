@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>turnos de futbol y padel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/base.css')}}">
+</head>
+
+<body>
+   
+    <header>
+        
+    
+            <h2>Gestión de Turnos</h2>
+            <ul>
+                <a href="{{url_for('pantalla_inicio')}}">
+                    <li>Inicio</li>
+                </a>
+                <a href="{{url_for('turnos_disponibles')}}">
+                    <li>Turnos disponibles</li>
+                </a>
+                <a href="{{url_for('registrar_turnos')}}">
+                    <li>registrar turnos</li>
+                </a>
+                <a href="{{url_for('calendario')}}">
+                    <li>Calendario</li>
+                </a>
+            </ul>
+    
+    </header>
+
+
+    {% block content %}
+    {% endblock %}
+    <script> src= "{{ url_for('static', filename= 'python/oaa.py')}}"</script>
+</body>
+</html>
