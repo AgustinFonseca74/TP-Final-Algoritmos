@@ -26,3 +26,9 @@ body {
     transform: scale(1.1);
 
 }
+
+.home{
+    width: 95px;
+    display: flex;
+    justify-self:left;
+}

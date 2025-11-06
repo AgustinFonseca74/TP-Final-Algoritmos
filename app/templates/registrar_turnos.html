@@ -1,8 +1,19 @@
 {% extends "base.html" %}
 
-
 {% block content %}
 <main>
+    <a href="{{url_for('pantalla_inicio')}}">
+            <img class="home" src="{{ url_for('static', filename= 'img/logo.png')}}" alt="logoHome">
+    </a>
+    
     <h3>Esta es la pantalla de registrar turnos</h3>
+    <a href="{{url_for('pantalla_inicio')}}">
+                    <li>home</li>
+    </a>
+    
+
+     <h3>disponible</h3>
+    
 </main>
 {% endblock %}
+ 

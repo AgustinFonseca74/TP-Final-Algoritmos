@@ -4,11 +4,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def inicio():
-      return render_template('base.html')
+      return render_template('pantalla_inicio.html')
 
-@app.route('/base')
+@app.route('/pantalla_inicio')
 def pantalla_inicio():
-       return render_template('base.html')
+       return render_template('pantalla_inicio.html')
 
     
 
@@ -20,9 +20,9 @@ def turnos_disponibles():
 def registrar_turnos():
        return render_template("registrar_turnos.html")
 
-@app.route('/calendario')
+@app.route('/base')
 def calendario():
-       return render_template("calendario.html")
+       return render_template("base.html")
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)

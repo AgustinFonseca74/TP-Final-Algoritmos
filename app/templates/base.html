@@ -9,37 +9,19 @@
     <link rel="stylesheet" href="{{ url_for('static', filename= 'css/base.css')}}">
 
     <link rel="stylesheet" href="{{ url_for('static', filename= 'icono.png')}}">
-
+    
 
 <body>
-
-    <a class="Centerstyle" href=""><img class="Logoestilo" src="{{ url_for('static', filename= 'img/logo.png')}}" alt="logo"></a>
-   
+    
+    
     <header>
-         
-    
-        
-            <h2>Gestión de Turnos</h2>
-            <ul>
-                <a href="{{url_for('pantalla_inicio')}}">
-                    <li>Inicio</li>
-                </a>
-                <a href="{{url_for('turnos_disponibles')}}">
-                    <li>Turnos disponibles</li>
-                </a>
-                <a href="{{url_for('registrar_turnos')}}">
-                    <li>registrar turnos</li>
-                </a>
-                <a href="{{url_for('calendario')}}">
-                    <li>Calendario</li>
-                </a>
-            </ul>
-    
     </header>
 
 
-    {% block content %}
+    {% block content%}
     {% endblock %}
-    <script> src= "{{ url_for('static', filename= 'python/oaa.py')}}"</script>
+    
+   
+    
 </body>
 </html>

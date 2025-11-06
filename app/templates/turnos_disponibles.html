@@ -2,8 +2,16 @@
 
 {% block content %}
 <main>
+    <a href="{{url_for('pantalla_inicio')}}">
+            <img class="home" src="{{ url_for('static', filename= 'img/logo.png')}}" alt="logoHome">
+    </a>
+
     <h3>Esta es la pantalla de turnos_disponibles</h3>
-    <p>apepepepepepa</p>
-    <button>clickeame</button>
+     <h3>disponible</h3>
+    <a href="{{url_for('registrar_turnos')}}">
+                    <li>turnos</li>
+    </a>
+
+    
 </main>
 {% endblock %}
