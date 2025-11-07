@@ -24,5 +24,9 @@ def registrar_turnos():
 def calendario():
        return render_template("base.html")
 
+@app.route('/oaa')
+def oaa():
+       return render_template("oaa.js")
+
 if __name__ == '__main__':
     app.run(debug=True, port=5000)

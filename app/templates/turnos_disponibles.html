@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
+
+
+
 <main>
     <a href="{{url_for('pantalla_inicio')}}">
             <img class="home" src="{{ url_for('static', filename= 'img/logo.png')}}" alt="logoHome">
@@ -12,6 +15,7 @@
                     <li>turnos</li>
     </a>
 
-    
+    <script src="{{ url_for('static', filename= 'js/oaa.js')}}"></script>
+
 </main>
 {% endblock %}
