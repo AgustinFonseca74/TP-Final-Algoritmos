@@ -6,15 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>El Tercer Tiempo</title>
     <link rel="icon" href="Icono.png" type="image">
-    <link rel="stylesheet" href="1.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/base.css')}}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'icono.png')}}">
+
 
 <body>
-    
-    <a class="Centerstyle" href=""><img class="Logoestilo" src="logo.png" alt="logo"></a>
+
+    <a class="Centerstyle" href=""><img class="Logoestilo" src="{{ url_for('static', filename= 'img/logo.png')}}" alt="logo"></a>
    
     <header>
-        
+         
     
+        
             <h2>Gestión de Turnos</h2>
             <ul>
                 <a href="{{url_for('pantalla_inicio')}}">
