@@ -2,170 +2,127 @@
 
 {% block content %}
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/turnos.css')}}">
+</head>
+<body>
+     <div class="contenedor">
+
+        <div class="tablaestilo">
+            <h3 class="titulos">FUTBOL</h3>
+            <table>
+                <tr>
+                    <td>Nombre</td>
+                    <td>Estado</td>
+                    <td>Hora</td>
+                </tr>
+                <tr>
+                    <th id="nombre"></th>
+                    <th id="estado"></th>
+                    <th>18:00</th>
+                </tr>
+
+                <tr>
+                    <th >JUAN</th>
+                    <th >No Disponible</th>
+                    <th>19:00</th>
+                </tr>
 
 
-<main>
-    <a href="{{url_for('pantalla_inicio')}}">
-            <img class="home" src="{{ url_for('static', filename= 'img/logo.png')}}" alt="logoHome">
-    </a>
+                <tr>
+                    <th >JEREMIAS</th>
+                    <th >No Disponible</th>
+                    <th>20:00</th>
+                </tr>
 
-    <h3>Esta es la pantalla de turnos_disponibles</h3>
-     <h3>disponible</h3>
-    <a href="{{url_for('registrar_turnos')}}">
-                    <li>turnos</li>
-    </a>
+                <tr>
+                    <th >ALEJANDRO</th>
+                    <th >No Disponible</th>
+                    <th>21:00</th>
+                </tr>
 
-     <style>
-            .contenedor{    
-            float: left;
-            margin: 10px;
-            }
-        </style>
-    <header>
-    
+                <tr>
+                    <th >PABLO</th>
+                    <th >No Disponible</th>
+                    <th>22:00</th>
+                </tr>
 
-        <div style="justify-self: center;margin-right: 360  px; margin-top: 150px; margin-left: 110px;" class="contenedor">
-         <table border="1"style="text-align:center;width: 150%;">
-    
-            <tr>
-                
-                <th>
-                    <p>DISPONIBILIDAD</p>
-                </th>
+            </table>
 
-                <th>
-                    <p>NOMBRE</p>
-                </th>
-                <th>
-                    <p>HORA</p>
-                </th>
-            </tr> 
-             <tr>
-                
-                <th>
-                    <p>NO DISPONIBLE</p>
-                </th>
+            <a class="titulos" href="{{url_for('registrar_turnos')}}">RESERVAR</a>
+        </div>
 
-                <th>
-                    <p>JEREMIAS</p>
-                </th>
-                <th>
-                    <p>18:00</p>
-                </th>
-            </tr>          
-            <tr>
-                
-                <th>
-                    <p>NO DISPONIBLE</p>
-                </th>
+        <div class="tablaestilo">
+            <h3 class="titulos">PADLE</h3>
+            <table>
+                <tr>
+                    <td>Nombre</td>
+                    <td>Estado</td>
+                    <td>Hora</td>
+                </tr>
+                <tr>
+                    <th id="nombre2"></th>
+                    <th id="estado2"></th>
+                    <th>18:00</th>
+                </tr>
 
-                <th>
-                    <p>JEREMIAS</p>
-                </th>
-                <th>
-                    <p>19:00</p>
-                </th>
-            </tr>
-            <tr>
-                
-                <th>
-                    <p>DISPONIBLE</p>
-                </th>
+                <tr>
+                    <th >JUAN</th>
+                    <th >No Disponible</th>
+                    <th>19:00</th>
+                </tr>
 
-                <th>
-                    <p></p>
-                </th>
-                <th>
-                    <p>20:00</p>
-                </th>
-            </tr>          
-             <tr>
-                
-                <th>
-                    <p>NO DISPONIBLE</p>
-                </th>
 
-                <th>
-                    <p>ALEJANDRO</p>
-                </th>
-                <th>
-                    <p>21:00</p>
-                </th>
-            </tr>          
-         </table>
-         </div>
+                <tr>
+                    <th >JEREMIAS</th>
+                    <th >No Disponible</th>
+                    <th>20:00</th>
+                </tr>
 
-        <div style="justify-self: center;margin-right: 250px; margin-top: 150px; margin-left: 250px;" class="contenedor">
-         <table border="1"style="text-align:center;width: 150%;">
-    
-            <tr>
-                
-                <th>
-                    <p>DISPONIBILIDAD</p>
-                </th>
+                <tr>
+                    <th >ALEJANDRO</th>
+                    <th >No Disponible</th>
+                    <th>21:00</th>
+                </tr>
 
-                <th>
-                    <p>NOMBRE</p>
-                </th>
-                <th>
-                    <p>HORA</p>
-                </th>
-            </tr> 
-             <tr>
-                
-                <th>
-                    <p>DISPONIBLE</p>
-                </th>
+                <tr>
+                    <th >PABLO</th>
+                    <th >No Disponible</th>
+                    <th>22:00</th>
+                </tr>
 
-                <th>
-                    <p></p>
-                </th>
-                <th>
-                    <p>18:00</p>
-                </th>
-            </tr>          
-            <tr>
-                
-                <th>
-                    <p>NO DISPONIBLE</p>
-                </th>
+            </table>
 
-                <th>
-                    <p>AGUSTINXD</p>
-                </th>
-                <th>
-                    <p>19:00</p>
-                </th>
-            </tr>
-            <tr>
-                
-                <th>
-                    <p>DISPONIBLE</p>
-                </th>
+            <a class="titulos" href="{{url_for('turnos_disponibles2')}}">RESERVAR</a>
+        </div>
 
-                <th>
-                    <p></p>
-                </th>
-                <th>
-                    <p>20:00</p>
-                </th>
-            </tr>          
-             <tr>
-                
-                <th>
-                    <p>NO DISPONIBLE</p>
-                </th>
+      </div>   
+    <script>
 
-                <th>
-                    <p>ALEJANDRO</p>
-                </th>
-                <th>
-                    <p>21:00</p>
-                </th>
-            </tr>          
-         </table>
-         </div>
-    </header>
+        const nombreregistrado = localStorage.getItem("nombrereserva");
+        const disponibilidad = localStorage.getItem("estadoreserva");
 
-</main>
+        if (nombreregistrado) document.getElementById("nombre").textContent = nombreregistrado;
+        if (disponibilidad) document.getElementById("estado").textContent = disponibilidad;
+
+    </script>
+
+    <script>
+
+        const nombreregistrado2 = localStorage.getItem("nombrereserva2");
+        const disponibilidad2 = localStorage.getItem("estadoreserva2");
+
+        if (nombreregistrado2) document.getElementById("nombre2").textContent = nombreregistrado2;
+        if (disponibilidad2) document.getElementById("estado2").textContent = disponibilidad2;
+
+    </script>
+
+</body>
+</html>
+
 {% endblock %}
