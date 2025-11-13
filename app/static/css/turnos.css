@@ -85,3 +85,14 @@ a:hover{
     text-shadow: 1px 8px 10px rgb(40, 43, 44);
     font-size: 25PX;
 }
+
+.boton{
+    text-align: center;
+    width: 180px;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 1px 5px 10px black;
+    display: flex;
+    margin: 9px;
+    font-family: moto;
+}

@@ -1,61 +1,56 @@
-{% extends "base.html" %}
-
-{% block content %}
-
+{% extends "base.html" %} {% block content %}
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registro</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/registros2.css')}}">
-</head>
-<body>
-
-    <H1 class="titulos">REGISTRO</H1>
-    <br>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename= 'css/registrosP.css')}}"
+    />
+  </head>
+  <body>
+    <h1 class="titulos">REGISTRO</h1>
+    <br />
 
     <div class="cajainput">
-        <form onsubmit="guardardatos2(); return false;">
+      <form onsubmit="guardardatos2(); return false;">
+        <h3>Por favor, complete los siguientes campos:</h3>
+        <br />
 
-            <h3>Por favor, complete los siguientes campos:</h3><br>
+        <h3>DATOS</h3>
 
-            <h3>DATOS</h3>
+        <label>Nombre y Apellido</label><br /><br />
+        <input type="text" id="nombreinput2" required /><br /><br />
 
-            <label>Nombre y Apellido</label><br><br>
-            <input type="text" id="nombreinput2" required><br><br>
+        <label>Numero de telefono</label><br /><br />
+        <input type="number" required /><br /><br />
 
-            <label>Numero de telefono</label><br><br>
-            <input type="number" required><br><br>
+        <label>Correo electronico</label><br /><br />
+        <input type="email" required /><br /><br />
 
-            <label>Correo electronico</label><br><br>
-            <input type="email" required><br><br>
+        <p>EL PAGO SE REALIZARA EN EFECTIVO</p>
 
-            <h3>INFORMACION DE PAGO</h3>
+        <br /><br />
 
-            <label>Forma de pago</label><br><br>
-          <select name="Forma de pago"><Option>Efectivo</Option><Option>Transferencia</Option></select>
-          
-
-            <br><br><br>
-
-
-            <button type="submit">ENVIAR</button>
-
-        </form>
+        <button type="submit">PAGAR</button>
+      </form>
     </div>
 
     <script>
-        function guardardatos2(){
-            localStorage.setItem("nombrereserva2",document.getElementById("nombreinput2").value)
-            localStorage.setItem("estadoreserva2", "No Disponible")
-       
-            window.location.href = "{{url_for('turnos_disponibles')}}";
-        }
-    </script>
+      function guardardatos2() {
+        localStorage.setItem(
+          "nombrereserva2",
+          document.getElementById("nombreinput2").value
+        );
+        localStorage.setItem("estadoreserva2", "No Disponible");
 
-</body>
+        window.location.href = "{{url_for('turnos_disponibles')}}";
+      }
+    </script>
+  </body>
 </html>
 
 {% endblock %}
