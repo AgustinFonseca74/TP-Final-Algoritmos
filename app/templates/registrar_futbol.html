@@ -8,25 +8,40 @@
     <title>Registro</title>
     <link
       rel="stylesheet"
-      href="{{ url_for('static', filename= 'css/registrosP.css')}}"
+      href="{{ url_for('static', filename= 'css/registrosF.css')}}"
     />
   </head>
   <body>
+    <div class="flechacontenedor">
+      <a class="Centerstyle" href="{{url_for('turnos_disponibles')}}"
+        ><img
+          class="flecha"
+          src="{{ url_for('static', filename= 'img/flecha.png')}}"
+          alt="logo"
+      /></a>
+    </div>
+
     <h1 class="titulos">REGISTRO</h1>
     <br />
 
     <div class="cajainput">
-      <form onsubmit="guardardatos2(); return false;">
+      <form onsubmit="guardardatos(); return false;">
         <h3>Por favor, complete los siguientes campos:</h3>
         <br />
 
         <h3>DATOS</h3>
 
         <label>Nombre y Apellido</label><br /><br />
-        <input type="text" id="nombreinput2" required /><br /><br />
+        <input type="text" id="nombreinput" required /><br /><br />
 
         <label>Numero de telefono</label><br /><br />
-        <input type="number" required /><br /><br />
+        <input
+          type="text"
+          required
+          minlength="13"
+          maxlength="13"
+          pattern="\d{13}"
+        /><br /><br />
 
         <label>Correo electronico</label><br /><br />
         <input type="email" required /><br /><br />
@@ -35,17 +50,21 @@
 
         <br /><br />
 
-        <button type="submit">PAGAR</button>
+        <button type="submit">REGISTRAR</button>
       </form>
     </div>
 
     <script>
-      function guardardatos2() {
+      const params = new URLSearchParams(window.location.search);
+      const fila = params.get("fila");
+
+      function guardardatos() {
         localStorage.setItem(
-          "nombrereserva2",
-          document.getElementById("nombreinput2").value
+          "nombrereserva" + fila,
+          document.getElementById("nombreinput").value
         );
-        localStorage.setItem("estadoreserva2", "No Disponible");
+
+        localStorage.setItem("estadoreserva" + fila, "No Disponible");
 
         window.location.href = "{{url_for('turnos_disponibles')}}";
       }

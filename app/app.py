@@ -10,27 +10,36 @@ def inicio():
 def pantalla_inicio():
        return render_template('pantalla_inicio.html')
 
-    
-
 @app.route('/turnos_disponibles')
 def turnos_disponibles():
        return render_template("turnos_disponibles.html")
 
-@app.route('/registrar_turnos')
-def registrar_turnos():
-       return render_template("registrar_turnos.html")
+@app.route('/registrar_futbol')
+def registrar_futbol():
+       return render_template("registrar_futbol.html")
 
 @app.route('/base')
 def calendario():
        return render_template("base.html")
 
-@app.route('/turnos_disponibles2')
-def turnos_disponibles2():
-       return render_template("turnos_disponibles2.html")
+@app.route('/registrar_padle')
+def registrar_padle():
+       return render_template("registrar_padle.html")
 
 @app.route('/sobre_nosotros')
 def sobre_nosotros():
        return render_template("sobre_nosotros.html")
+
+
+@app.route('/turnos_padle')
+def turnos_padle():
+       return render_template("turnos_padle.html")
+
+
+@app.route('/eleccion_deporte')
+def eleccion_deporte():
+       return render_template("eleccion_deporte.html")
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)

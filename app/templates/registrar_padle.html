@@ -8,15 +8,24 @@
     <title>Registro</title>
     <link
       rel="stylesheet"
-      href="{{ url_for('static', filename= 'css/registrosF.css')}}"
+      href="{{ url_for('static', filename= 'css/registrosP.css')}}"
     />
   </head>
   <body>
+    <div class="flechacontenedor">
+      <a class="Centerstyle" href="{{url_for('turnos_padle')}}"
+        ><img
+          class="flecha"
+          src="{{ url_for('static', filename= 'img/flecha.png')}}"
+          alt="logo"
+      /></a>
+    </div>
+
     <h1 class="titulos">REGISTRO</h1>
     <br />
 
     <div class="cajainput">
-      <form onsubmit="guardardatos(); return false;">
+      <form onsubmit="guardardatos2(); return false;">
         <h3>Por favor, complete los siguientes campos:</h3>
         <br />
 
@@ -27,10 +36,11 @@
 
         <label>Numero de telefono</label><br /><br />
         <input
-          type="number"
+          type="text"
           required
-          minlength="10"
-          maxlength="10"
+          minlength="13"
+          maxlength="13"
+          pattern="\d{13}"
         /><br /><br />
 
         <label>Correo electronico</label><br /><br />
@@ -40,23 +50,19 @@
 
         <br /><br />
 
-        <button type="submit">REGISTRAR</button>
+        <button type="submit">PAGAR</button>
       </form>
     </div>
 
     <script>
-      const params = new URLSearchParams(window.location.search);
-      const fila = params.get("fila");
-
-      function guardardatos() {
+      function guardardatos2() {
         localStorage.setItem(
-          "nombrereserva" + fila,
+          "nombrereserva2",
           document.getElementById("nombreinput").value
         );
+        localStorage.setItem("estadoreserva", "No Disponible");
 
-        localStorage.setItem("estadoreserva" + fila, "No Disponible");
-
-        window.location.href = "{{url_for('turnos_disponibles')}}";
+        window.location.href = "{{url_for('turnos_padle')}}";
       }
     </script>
   </body>
