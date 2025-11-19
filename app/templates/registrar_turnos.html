@@ -26,7 +26,12 @@
         <input type="text" id="nombreinput" required /><br /><br />
 
         <label>Numero de telefono</label><br /><br />
-        <input type="number" required /><br /><br />
+        <input
+          type="number"
+          required
+          minlength="10"
+          maxlength="10"
+        /><br /><br />
 
         <label>Correo electronico</label><br /><br />
         <input type="email" required /><br /><br />
@@ -35,17 +40,21 @@
 
         <br /><br />
 
-        <button type="submit">PAGAR</button>
+        <button type="submit">REGISTRAR</button>
       </form>
     </div>
 
     <script>
+      const params = new URLSearchParams(window.location.search);
+      const fila = params.get("fila");
+
       function guardardatos() {
         localStorage.setItem(
-          "nombrereserva",
+          "nombrereserva" + fila,
           document.getElementById("nombreinput").value
         );
-        localStorage.setItem("estadoreserva", "No Disponible");
+
+        localStorage.setItem("estadoreserva" + fila, "No Disponible");
 
         window.location.href = "{{url_for('turnos_disponibles')}}";
       }

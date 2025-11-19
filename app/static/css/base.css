@@ -1,42 +1,43 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
- background-image: url("/static/img/background.png");
- background-repeat: no-repeat;
- text-align: center;
- font-family: Arial, Helvetica, sans-serif;
- font-weight: bold;
- background-position: center center;
- background-size: cover;
- height: 90vh;
- width: 100%;
- overflow-x: none;
+  background-image: url("/static/img/background.png");
+  background-repeat: no-repeat;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  background-position: center center;
+  background-size: cover;
+  height: 90vh;
+  width: 100%;
+  overflow-x: none;
+  margin: 0;
+  padding: 0;
 }
 
 .Centerstyle {
-    position:absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.Logoestilo{
-    transition: 0.3s ease-in-out;
+.Logoestilo {
+  transition: 0.3s ease-in-out;
 }
 
-.Logoestilo:hover{
-    transform: scale(1.1);
-
+.Logoestilo:hover {
+  transform: scale(1.1);
 }
 
-.home{
-    width: 95px;
-    display: flex;
-    justify-self:left;
+.home {
+  width: 95px;
+  display: flex;
+  justify-self: left;
 }
 
 @font-face {
@@ -44,17 +45,38 @@ body {
   src: url("/static/img/moto-verse.ttf");
 }
 
-.titulos2{
-    text-align: center;
-    font-family: moto;
-    color: #e35837;
-    text-shadow: 1px 8px 10px rgb(40, 43, 44);
-    position:absolute;
-    top: 95%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.titulos2 {
+  text-align: center;
+  font-family: moto;
+  color: #e35837;
+  text-shadow: 1px 8px 10px rgb(40, 43, 44);
+  position: absolute;
+  top: 95%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
+}
+
+.flecha {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  height: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.flechacontenedor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 40px;
+  width: auto;
+  z-index: 9999;
+  pointer-events: auto;
+  display: block;
+  padding-left: 20px;
 }

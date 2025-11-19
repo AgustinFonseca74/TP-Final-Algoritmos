@@ -22,81 +22,69 @@
             <td>Hora</td>
           </tr>
           <tr>
-            <th id="nombre"></th>
-            <th id="estado"></th>
+            <th id="nombre1"></th>
+            <th id="estado1"></th>
             <th>18:00</th>
-          </tr>
-
-          <tr>
-            <th>JUAN</th>
-            <th>No Disponible</th>
-            <th>19:00</th>
-          </tr>
-
-          <tr>
-            <th>JEREMIAS</th>
-            <th>No Disponible</th>
-            <th>20:00</th>
-          </tr>
-
-          <tr>
-            <th>ALEJANDRO</th>
-            <th>No Disponible</th>
-            <th>21:00</th>
-          </tr>
-
-          <tr>
-            <th>PABLO</th>
-            <th>No Disponible</th>
-            <th>22:00</th>
-          </tr>
-        </table>
-
-        <a class="titulos" href="{{url_for('registrar_turnos')}}">RESERVAR</a>
-      </div>
-
-      <div class="tablaestilo">
-        <h3 class="titulos">PADLE</h3>
-        <table>
-          <tr>
-            <td>Nombre</td>
-            <td>Estado</td>
-            <td>Hora</td>
+            <th>
+              <a
+                class="botonesregistro"
+                href="{{ url_for('registrar_turnos', fila=1) }}"
+                >RESERVAR</a
+              >
+            </th>
           </tr>
           <tr>
             <th id="nombre2"></th>
             <th id="estado2"></th>
-            <th>18:00</th>
-          </tr>
-
-          <tr>
-            <th>AGUSTIN</th>
-            <th>No Disponible</th>
             <th>19:00</th>
+            <th>
+              <a
+                class="botonesregistro"
+                href="{{ url_for('registrar_turnos', fila=2) }}"
+                >RESERVAR</a
+              >
+            </th>
           </tr>
 
           <tr>
-            <th>EMILIANO</th>
-            <th>No Disponible</th>
+            <th id="nombre3"></th>
+            <th id="estado3"></th>
             <th>20:00</th>
+            <th>
+              <a
+                class="botonesregistro"
+                href="{{ url_for('registrar_turnos', fila=3) }}"
+                >RESERVAR</a
+              >
+            </th>
           </tr>
 
           <tr>
-            <th>ALEJANDRO</th>
-            <th>No Disponible</th>
+            <th id="nombre4"></th>
+            <th id="estado4"></th>
             <th>21:00</th>
+            <th>
+              <a
+                class="botonesregistro"
+                href="{{ url_for('registrar_turnos', fila=4) }}"
+                >RESERVAR</a
+              >
+            </th>
           </tr>
 
           <tr>
-            <th>LUIS</th>
-            <th>No Disponible</th>
+            <th id="nombre5"></th>
+            <th id="nombre5"></th>
             <th>22:00</th>
+            <th>
+              <a
+                class="botonesregistro"
+                href="{{ url_for('registrar_turnos', fila=5) }}"
+                >RESERVAR</a
+              >
+            </th>
           </tr>
         </table>
-
-        <a class="titulos" href="{{url_for('turnos_disponibles2')}}"
-          >RESERVAR</a
-        >
       </div>
     </div>
 
@@ -105,29 +93,17 @@
     </button>
 
     <script>
-      const nombreregistrado = localStorage.getItem("nombrereserva");
-      const disponibilidad = localStorage.getItem("estadoreserva");
-
-      if (nombreregistrado)
-        document.getElementById("nombre").textContent = nombreregistrado;
-      if (disponibilidad)
-        document.getElementById("estado").textContent = disponibilidad;
-    </script>
-
-    <script>
-      const nombreregistrado2 = localStorage.getItem("nombrereserva2");
-      const disponibilidad2 = localStorage.getItem("estadoreserva2");
-
-      if (nombreregistrado2)
-        document.getElementById("nombre2").textContent = nombreregistrado2;
-      if (disponibilidad2)
-        document.getElementById("estado2").textContent = disponibilidad2;
+      for (let i = 1; i <= 5; i++) {
+        document.getElementById("nombre" + i).textContent =
+          localStorage.getItem("nombrereserva" + i) || "";
+        document.getElementById("estado" + i).textContent =
+          localStorage.getItem("estadoreserva" + i) || "";
+      }
     </script>
 
     <script>
       function borrardatos() {
         localStorage.clear();
-        ("Datos eliminados correctamente");
 
         window.location.href = "{{url_for('turnos_disponibles')}}";
       }

@@ -1,5 +1,14 @@
 {% extends "base.html" %} {% block content %}
 
+<div class="flechacontenedor">
+  <a class="Centerstyle" href="{{url_for('pantalla_inicio')}}"
+    ><img
+      class="flecha"
+      src="{{ url_for('static', filename= 'img/flecha.png')}}"
+      alt="logo"
+  /></a>
+</div>
+
 <h2>EL TERCER TIEMPO</h2>
 <p>
   En las afueras de la ciudad de Olavarria, donde antes solo había un terreno
