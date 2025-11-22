@@ -1,4 +1,5 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %} {% block title %}Reservar Turno - El Tercer Tiempo{%
+endblock %} {% block content %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,11 +29,16 @@
       <form onsubmit="guardardatos(); return false;">
         <h3>Por favor, complete los siguientes campos:</h3>
         <br />
-
-        <h3>DATOS</h3>
+        <br />
 
         <label>Nombre y Apellido</label><br /><br />
-        <input type="text" id="nombreinput" required /><br /><br />
+        <input
+          type="text"
+          pattern="[A-Za-z]+"
+          title="Solo se permiten letras"
+          id="nombreinput"
+          required
+        /><br /><br />
 
         <label>Numero de telefono</label><br /><br />
         <input
@@ -41,16 +47,19 @@
           minlength="13"
           maxlength="13"
           pattern="\d{13}"
+          title="El numero debe contener 13 digitos"
         /><br /><br />
 
         <label>Correo electronico</label><br /><br />
         <input type="email" required /><br /><br />
 
+        <br /><br />
+
         <p>EL PAGO SE REALIZARA EN EFECTIVO</p>
 
         <br /><br />
 
-        <button type="submit">REGISTRAR</button>
+        <button type="submit">RESERVAR</button>
       </form>
     </div>
 

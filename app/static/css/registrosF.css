@@ -1,68 +1,55 @@
-body{
-    background-image: url("/static/img/fondofutbol.jpg");
-    background-size: cover;
+body {
+  background-image: url("/static/img/fondofutbol.jpg");
+  background-size: cover;
 }
 
-.tablaestilo{
-    text-align: center;
-    width: 600px;
-    padding: 20px;
-    backdrop-filter: blur(10px);
-    box-shadow: 1px 5px 10px black;
+.tablaestilo {
+  text-align: center;
+  width: 600px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 1px 5px 10px black;
 }
 
-table{
-    width: 100%;
-    margin: 0 auto;
-    border-collapse: collapse;
+table {
+  width: 100%;
+  margin: 0 auto;
+  border-collapse: collapse;
 }
 
-table, th, td {
+table,
+th,
+td {
   border: 1px solid whitesmoke;
   padding: 30px;
 }
 
-a{
-    display: inline-block;
-    padding: 20px;
-    border: 1px solid whitesmoke;
-    background: rgba(233, 227, 227, 0.5);
-    text-decoration: none;
-    margin: 20px;
-    border-radius: 5px;
-    transition: .2s ease-in-out;
+.cajainput {
+  text-align: center;
+  padding: 20px;
+  box-shadow: 1px 5px 10px black;
+  backdrop-filter: blur(10px);
+  width: 600px;
+  margin: 0 auto;
 }
 
-a:hover{
-    transform: scale(1.1);
+.cajainput input {
+  border: 0px;
+  box-shadow: 1px 1px 10px black;
+  background: rgba(255, 255, 255, 0.2);
+  height: 25px;
+  width: 250px;
 }
 
-.cajainput{
-    text-align: center;
-    padding: 20px;
-    box-shadow: 1px 5px 10px black;
-    backdrop-filter: blur(10px);
-    width: 600px;
-    margin: 0 auto;
+.cajainput label {
+  font-size: 20px;
 }
 
-.cajainput input{
-    border: 0px;
-    box-shadow: 1px 1px 10px black;
-    background: rgba(255, 255, 255, 0.2);
-    height: 25px;
-    width: 250px;
-}
-
-.cajainput label{
-    font-size: 20px;
-}
-
-.cajainput button{
-    width: 30%;
-    background: rgba(233, 227, 227, 1);
-    height: 35px;
-    border-radius: 10px;
+.cajainput button {
+  width: 30%;
+  background: rgba(233, 227, 227, 1);
+  height: 35px;
+  border-radius: 10px;
 }
 
 @font-face {
@@ -70,9 +57,9 @@ a:hover{
   src: url("/static/img/moto-verse.ttf");
 }
 
-.titulos{
-    text-align: center;
-    font-family: moto;
-    color: #e35837;
-    text-shadow: 1px 8px 10px rgb(40, 43, 44);
+.titulos {
+  text-align: center;
+  font-family: moto;
+  color: #e35837;
+  text-shadow: 1px 8px 10px rgb(40, 43, 44);
 }

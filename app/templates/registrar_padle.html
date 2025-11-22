@@ -1,4 +1,5 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %} {% block title %}Reservar Turno - El Tercer Tiempo{%
+endblock %} {% block content %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,12 +28,16 @@
     <div class="cajainput">
       <form onsubmit="guardardatos2(); return false;">
         <h3>Por favor, complete los siguientes campos:</h3>
-        <br />
-
-        <h3>DATOS</h3>
+        <br /><br />
 
         <label>Nombre y Apellido</label><br /><br />
-        <input type="text" id="nombreinput" required /><br /><br />
+        <input
+          type="text"
+          pattern="[A-Za-z]+"
+          title="Solo se permiten letras"
+          id="2nombreinput"
+          required
+        /><br /><br />
 
         <label>Numero de telefono</label><br /><br />
         <input
@@ -41,26 +46,33 @@
           minlength="13"
           maxlength="13"
           pattern="\d{13}"
+          title="El numero debe contener 13 digitos"
         /><br /><br />
 
         <label>Correo electronico</label><br /><br />
         <input type="email" required /><br /><br />
 
+        <br /><br />
+
         <p>EL PAGO SE REALIZARA EN EFECTIVO</p>
 
         <br /><br />
 
-        <button type="submit">PAGAR</button>
+        <button type="submit">RESERVAR</button>
       </form>
     </div>
 
     <script>
+      const params = new URLSearchParams(window.location.search);
+      const fila = params.get("fila");
+
       function guardardatos2() {
         localStorage.setItem(
-          "nombrereserva2",
-          document.getElementById("nombreinput").value
+          "2nombrereserva" + fila,
+          document.getElementById("2nombreinput").value
         );
-        localStorage.setItem("estadoreserva", "No Disponible");
+
+        localStorage.setItem("2estadoreserva" + fila, "No Disponible");
 
         window.location.href = "{{url_for('turnos_padle')}}";
       }

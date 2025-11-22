@@ -1,4 +1,5 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %} {% block title %}Reservas - El Tercer Tiempo{%
+endblock %} {% block content %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +24,7 @@
 
     <div class="contenedor">
       <div class="tablaestilo">
-        <h3 class="titulos">PADLE</h3>
+        <h3 class="titulos">PÁDEL</h3>
         <table>
           <tr>
             <td>Nombre</td>
@@ -31,91 +32,81 @@
             <td>Hora</td>
           </tr>
           <tr>
-            <th id="nombre6"></th>
-            <th id="estado6"></th>
+            <th id="2nombre1"></th>
+            <th id="2estado1"></th>
             <th>18:00</th>
-            <th>
+            <th id="2reservar1">
               <a
-                class="botonesregistro"
-                href="{{ url_for('registrar_padle', fila=6) }}"
+                class="reservarboton"
+                href="{{ url_for('registrar_padle', fila=1) }}"
                 >RESERVAR</a
               >
             </th>
-            <th>
-              <button class="botonescancelar" onclick="borrarFila(6)">
-                CANCELAR
-              </button>
+            <th id="2cancelar1">
+              <a class="cancelarboton" onclick="borrarFila(1)"> CANCELAR </a>
             </th>
           </tr>
           <tr>
-            <th id="nombre7"></th>
-            <th id="estado7"></th>
+            <th id="2nombre2"></th>
+            <th id="2estado2"></th>
             <th>19:00</th>
-            <th>
+            <th id="2reservar2">
               <a
-                class="botonesregistro"
-                href="{{ url_for('registrar_padle', fila=7) }}"
+                class="reservarboton"
+                href="{{ url_for('registrar_padle', fila=2) }}"
                 >RESERVAR</a
               >
             </th>
-            <th>
-              <button class="botonescancelar" onclick="borrarFila(7)">
-                CANCELAR
-              </button>
+            <th id="2cancelar2">
+              <a class="cancelarboton" onclick="borrarFila(2)"> CANCELAR </a>
             </th>
           </tr>
 
           <tr>
-            <th id="nombre8"></th>
-            <th id="estado8"></th>
+            <th id="2nombre3"></th>
+            <th id="2estado3"></th>
             <th>20:00</th>
-            <th>
+            <th id="2reservar3">
               <a
-                class="botonesregistro"
-                href="{{ url_for('registrar_padle', fila=8) }}"
+                class="reservarboton"
+                href="{{ url_for('registrar_padle', fila=3) }}"
                 >RESERVAR</a
               >
             </th>
-            <th>
-              <button class="botonescancelar" onclick="borrarFila(8)">
-                CANCELAR
-              </button>
+            <th id="2cancelar3">
+              <a class="cancelarboton" onclick="borrarFila(3)"> CANCELAR </a>
             </th>
           </tr>
 
           <tr>
-            <th id="nombre9"></th>
-            <th id="estado9"></th>
+            <th id="2nombre4"></th>
+            <th id="2estado4"></th>
             <th>21:00</th>
-            <th>
+            <th id="2reservar4">
               <a
-                class="botonesregistro"
-                href="{{ url_for('registrar_padle', fila=9) }}"
+                class="reservarboton"
+                href="{{ url_for('registrar_padle', fila=4) }}"
                 >RESERVAR</a
               >
             </th>
-            <th>
-              <button class="botonescancelar" onclick="borrarFila(9)">
-                CANCELAR
-              </button>
+            <th id="2cancelar4">
+              <a class="cancelarboton" onclick="borrarFila(4)"> CANCELAR </a>
             </th>
           </tr>
 
           <tr>
-            <th id="nombre10"></th>
-            <th id="estado10"></th>
+            <th id="2nombre5"></th>
+            <th id="2estado5"></th>
             <th>22:00</th>
-            <th>
+            <th id="2reservar5">
               <a
-                class="botonesregistro"
-                href="{{ url_for('registrar_padle', fila=10) }}"
+                class="reservarboton"
+                href="{{ url_for('registrar_padle', fila=5) }}"
                 >RESERVAR</a
               >
             </th>
-            <th>
-              <button class="botonescancelar" onclick="borrarFila(10)">
-                CANCELAR
-              </button>
+            <th id="2cancelar5">
+              <a class="cancelarboton" onclick="borrarFila(5)"> CANCELAR </a>
             </th>
           </tr>
         </table>
@@ -127,22 +118,26 @@
     </button>
 
     <script>
-      for (let i = 6; i <= 10; i++) {
-        document.getElementById("nombre" + i).textContent =
-          localStorage.getItem("nombrereserva" + i) || "";
-        document.getElementById("estado" + i).textContent =
-          localStorage.getItem("estadoreserva" + i) || "disponible";
+      for (let i = 1; i <= 5; i++) {
+        document.getElementById("2nombre" + i).textContent =
+          localStorage.getItem("2nombrereserva" + i) || "";
+        document.getElementById("2estado" + i).textContent =
+          localStorage.getItem("2estadoreserva" + i) || "disponible";
+
+        let estadoreserva = localStorage.getItem("2estadoreserva" + i);
+
+        if (estadoreserva === "No Disponible") {
+          document.getElementById("2reservar" + i).classList.add("ocultar");
+        } else {
+          document.getElementById("2cancelar" + i).classList.add("ocultar");
+        }
       }
     </script>
 
     <script>
-      document.getElementById("nombre" + i);
-    </script>
-
-    <script>
       function borrarFila(fila) {
-        localStorage.removeItem("nombrereserva" + fila);
-        localStorage.removeItem("estadoreserva" + fila);
+        localStorage.removeItem("2nombrereserva" + fila);
+        localStorage.removeItem("2estadoreserva" + fila);
 
         location.reload();
       }
