@@ -1,9 +1,28 @@
-{% extends "base.html" %} {% block content %}
 
-<main>
+{% extends "base.html" %} 
+
+{% block title %}Deportes - El Tercer Tiempo{% endblock %}
+
+{% block content %}
+
+
+<div class="flechacontenedor">
+  <a class="Centerstyle" href="{{url_for('pantalla_inicio')}}"
+    ><img
+      class="flecha"
+      src="{{ url_for('static', filename= 'img/flecha.png')}}"
+      alt="logo"
+  /></a>
+</div>
+
+
+
+<div>
   <a href="{{url_for('turnos_disponibles')}}">FUTBOL</a>
 
   <a href="{{url_for('turnos_padle')}}">PADLE</a>
-</main>
+</div>
+
+
 
 {% endblock %}

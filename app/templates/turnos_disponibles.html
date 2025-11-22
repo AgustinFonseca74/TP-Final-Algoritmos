@@ -1,4 +1,7 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %}
+{% block title %}Reservas - El Tercer Tiempo{% endblock %}
+
+{% block content %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +26,7 @@
 
     <div class="contenedor">
       <div class="tablaestilo">
-        <h3 class="titulos">FUTBOL</h3>
+        <h3 class="titulos">FÚTBOL</h3>
         <table>
           <tr>
             <td>Nombre</td>
@@ -34,34 +37,34 @@
             <th id="nombre1"></th>
             <th id="estado1"></th>
             <th>18:00</th>
-            <th>
+            <th id="reservar1">
               <a
-                class="botonesregistro"
+                class="reservarboton"
                 href="{{ url_for('registrar_futbol', fila=1) }}"
                 >RESERVAR</a
               >
             </th>
-            <th>
-              <button class="botonescancelar" onclick="borrarFila(1)">
+            <th id="cancelar1">
+              <a class="cancelarboton" onclick="borrarFila(1)">
                 CANCELAR
-              </button>
+              </a>
             </th>
           </tr>
           <tr>
             <th id="nombre2"></th>
             <th id="estado2"></th>
             <th>19:00</th>
-            <th>
+            <th id="reservar2">
               <a
-                class="botonesregistro"
+                class="reservarboton"
                 href="{{ url_for('registrar_futbol', fila=2) }}"
                 >RESERVAR</a
               >
             </th>
-            <th>
-              <button class="botonescancelar" onclick="borrarFila(2)">
+            <th id="cancelar2">
+              <a class="cancelarboton" onclick="borrarFila(2)">
                 CANCELAR
-              </button>
+              </a>
             </th>
           </tr>
 
@@ -69,17 +72,17 @@
             <th id="nombre3"></th>
             <th id="estado3"></th>
             <th>20:00</th>
-            <th>
+            <th id="reservar3">
               <a
-                class="botonesregistro"
+                class="reservarboton"
                 href="{{ url_for('registrar_futbol', fila=3) }}"
                 >RESERVAR</a
               >
             </th>
-            <th>
-              <button class="botonescancelar" onclick="borrarFila(3)">
+            <th id="cancelar3">
+              <a class="cancelarboton" onclick="borrarFila(3)">
                 CANCELAR
-              </button>
+              </a>
             </th>
           </tr>
 
@@ -87,17 +90,17 @@
             <th id="nombre4"></th>
             <th id="estado4"></th>
             <th>21:00</th>
-            <th>
+            <th id="reservar4">
               <a
-                class="botonesregistro"
+                class="reservarboton"
                 href="{{ url_for('registrar_futbol', fila=4) }}"
                 >RESERVAR</a
               >
             </th>
-            <th>
-              <button class="botonescancelar" onclick="borrarFila(4)">
+            <th id="cancelar4">
+              <a class="cancelarboton" onclick="borrarFila(4)">
                 CANCELAR
-              </button>
+              </a>
             </th>
           </tr>
 
@@ -105,17 +108,15 @@
             <th id="nombre5"></th>
             <th id="estado5"></th>
             <th>22:00</th>
-            <th>
+            <th id="reservar5">
               <a
-                class="botonesregistro"
+                class="reservarboton"
                 href="{{ url_for('registrar_futbol', fila=5) }}"
                 >RESERVAR</a
               >
             </th>
-            <th>
-              <button class="botonescancelar" onclick="borrarFila(5)">
-                CANCELAR
-              </button>
+            <th id="cancelar5">
+              <a class="cancelarboton" onclick="borrarFila(5)">CANCELAR</a>
             </th>
           </tr>
         </table>
@@ -131,8 +132,16 @@
         document.getElementById("nombre" + i).textContent =
           localStorage.getItem("nombrereserva" + i) || "";
         document.getElementById("estado" + i).textContent =
-          localStorage.getItem("estadoreserva" + i) || "disponible";
-      }
+          localStorage.getItem("estadoreserva" + i) || "Disponible";
+
+          let estadoreserva = localStorage.getItem("estadoreserva" + i);
+
+          if (estadoreserva === "No Disponible") {
+            document.getElementById("reservar" + i).classList.add("ocultar");
+          } else {
+            document.getElementById("cancelar" + i).classList.add("ocultar");
+          }
+        }
     </script>
 
     <script>

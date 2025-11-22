@@ -67,6 +67,7 @@ a {
   height: 30px;
   margin: 0;
   padding: 0;
+  
 }
 
 .flechacontenedor {
@@ -79,4 +80,8 @@ a {
   pointer-events: auto;
   display: block;
   padding-left: 20px;
+}
+
+input {
+    padding: 5px;
 }
