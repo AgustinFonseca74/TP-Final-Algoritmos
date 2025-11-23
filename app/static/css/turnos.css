@@ -7,6 +7,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 50px;
+  margin-top: 30px;
 }
 
 .tablaestilo {
@@ -18,18 +19,20 @@ body {
   display: flex;
   flex-direction: column;
   width: fit-content;
+  border-radius: 20px;
 }
 
 table {
   width: 100%;
-  margin: 0 auto;
+  margin: 5px auto;
   border-collapse: collapse;
+  color: #e35837;
 }
 
 table,
 th,
 td {
-  border: 1px solid whitesmoke;
+  border: 2px solid whitesmoke;
   padding: 10px;
 }
 
@@ -117,7 +120,7 @@ a {
   display: inline-block;
   padding: 20px 40px;
   border: 1px solid whitesmoke;
-  background: rgba(26, 109, 15, 0.5);
+  background: #00cc0780;
   border-radius: 5px;
   text-decoration: none;
   transition: 0.2s ease-in-out;
@@ -139,7 +142,7 @@ a {
   display: inline-block;
   padding: 20px 40px;
   border: 1px solid whitesmoke;
-  background: rgba(85, 13, 13, 0.5);
+  background: #7e070780;
   border-radius: 5px;
   text-decoration: none;
   transition: 0.2s ease-in-out;
@@ -148,7 +151,7 @@ a {
 
   text-align: center;
   font-family: moto;
-  color: #e35837;
+  color: #ca3814;
   text-shadow: 1px 8px 10px rgb(40, 43, 44);
   text-decoration: none;
   transition: ease-in-out 0.2s;
