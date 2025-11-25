@@ -45,6 +45,11 @@ body {
   src: url("/static/img/moto-verse.ttf");
 }
 
+@font-face {
+  font-family: inter;
+  src: url(InterVariable.ttf);
+}
+
 .titulos2 {
   text-align: center;
   font-family: moto;

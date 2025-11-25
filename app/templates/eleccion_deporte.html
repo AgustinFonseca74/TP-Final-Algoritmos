@@ -1,6 +1,16 @@
 {% extends "base.html" %} {% block title %}Deportes - El Tercer Tiempo{%endblock
 %} {% block content %}
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eleccion deporte</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/eleccion.css')}}">
+</head>
+<body>
+
 <div class="flechacontenedor">
   <a class="Centerstyle" href="{{url_for('pantalla_inicio')}}"
     ><img
@@ -10,12 +20,11 @@
   /></a>
 </div>
 
-<h1>Hola</h1>
+<p class="leyenda">SELECCIONE SU DEPORTE</p>
 
-<div>
-  <a href="{{url_for('turnos_disponibles')}}">FUTBOL</a>
-
-  <a href="{{url_for('turnos_padle')}}">PADLE</a>
+<div class="opcionescontenedor">
+    <a class="opciones futbol" href="{{url_for('turnos_disponibles')}}">FÚTBOL</a>
+    <a class="opciones padel" href="{{url_for('turnos_padle')}}">PÁDEL</a>
 </div>
 
 {% endblock %}

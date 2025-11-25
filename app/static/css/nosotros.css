@@ -1,0 +1,75 @@
+body{
+    background-image: url(/static/img/fondobasico2.png);
+    background-size: cover;
+    text-align: center;
+}
+
+.maincontenedor{
+    width: 55%;
+    height: 80%;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 1px 20px 15px rgb(88, 33, 20);
+    backdrop-filter: blur(10px);
+    position: fixed; 
+    top: 80px;
+    left: 50%;        
+    transform: translateX(-50%); /* sin esto no funciona el left */
+    display: flex;
+}
+
+.textocontenedor{
+    max-height: 100%;
+    overflow-y: auto;
+    padding-right: 15px;
+}
+
+    .textocontenedor::-webkit-scrollbar {
+        width: 8px; 
+    }
+
+    .textocontenedor::-webkit-scrollbar-track {
+        background: #4b1609;
+        border-radius: 4px;
+    }
+
+    .textocontenedor::-webkit-scrollbar-thumb {
+        background-color: #e35837; 
+        border-radius: 4px;
+    }
+
+.logotexto{
+    text-align: center;
+    font-family: moto;
+    color: whitesmoke;
+    text-shadow: 1px 5px 10px rgb(48, 13, 5);
+    margin: 30px;
+}
+
+.texto{
+    color: rgb(160, 68, 68);
+    font-size: larger;
+    font-weight: 600;
+    font-family: inter;
+    line-height: 1.6;
+    text-align: justify;
+    margin: 20px;
+}
+
+.fotos{
+    justify-self: center;
+    width: 50%;
+    margin: 30px;
+    border-radius: 20px;
+    box-shadow: 1px 15px 15px rgb(48, 13, 5);
+}
+
+.contenedorfotos {
+    display: block;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.contenedorfotos img{
+    width: 40%;
+}
