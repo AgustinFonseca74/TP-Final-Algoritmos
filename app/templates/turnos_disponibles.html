@@ -37,13 +37,13 @@ endblock %} {% block content %}
             <th>18:00</th>
             <th id="reservar1">
               <a
-                class="reservarboton"
+                class="boton reservar"
                 href="{{ url_for('registrar_futbol', fila=1) }}"
                 >RESERVAR</a
               >
             </th>
             <th id="cancelar1">
-              <a class="cancelarboton" onclick="borrarFila(1)"> CANCELAR </a>
+              <a class="boton cancelar" onclick="borrarFila(1)"> CANCELAR </a>
             </th>
           </tr>
           <tr>
@@ -52,13 +52,13 @@ endblock %} {% block content %}
             <th>19:00</th>
             <th id="reservar2">
               <a
-                class="reservarboton"
+                class="boton reservar"
                 href="{{ url_for('registrar_futbol', fila=2) }}"
                 >RESERVAR</a
               >
             </th>
             <th id="cancelar2">
-              <a class="cancelarboton" onclick="borrarFila(2)"> CANCELAR </a>
+              <a class="boton cancelar" onclick="borrarFila(2)"> CANCELAR </a>
             </th>
           </tr>
 
@@ -68,13 +68,13 @@ endblock %} {% block content %}
             <th>20:00</th>
             <th id="reservar3">
               <a
-                class="reservarboton"
+                class="boton reservar"
                 href="{{ url_for('registrar_futbol', fila=3) }}"
                 >RESERVAR</a
               >
             </th>
             <th id="cancelar3">
-              <a class="cancelarboton" onclick="borrarFila(3)"> CANCELAR </a>
+              <a class="boton cancelar" onclick="borrarFila(3)"> CANCELAR </a>
             </th>
           </tr>
 
@@ -84,13 +84,13 @@ endblock %} {% block content %}
             <th>21:00</th>
             <th id="reservar4">
               <a
-                class="reservarboton"
+                class="boton reservar"
                 href="{{ url_for('registrar_futbol', fila=4) }}"
                 >RESERVAR</a
               >
             </th>
             <th id="cancelar4">
-              <a class="cancelarboton" onclick="borrarFila(4)"> CANCELAR </a>
+              <a class="boton cancelar" onclick="borrarFila(4)"> CANCELAR </a>
             </th>
           </tr>
 
@@ -100,20 +100,20 @@ endblock %} {% block content %}
             <th>22:00</th>
             <th id="reservar5">
               <a
-                class="reservarboton"
+                class="boton reservar"
                 href="{{ url_for('registrar_futbol', fila=5) }}"
                 >RESERVAR</a
               >
             </th>
             <th id="cancelar5">
-              <a class="cancelarboton" onclick="borrarFila(5)">CANCELAR</a>
+              <a class="boton cancelar" onclick="borrarFila(5)">CANCELAR</a>
             </th>
           </tr>
         </table>
       </div>
     </div>
 
-    <button class="boton" type="button" onclick="borrardatos()">
+    <button class="limpiar" type="button" onclick="borrardatos()">
       Limpiar tabla
     </button>
 
@@ -144,8 +144,11 @@ endblock %} {% block content %}
     </script>
 
     <script>
-      function borrardatos() {
-        localStorage.clear();
+        function borrardatos() {
+        for (let i = 1; i <= 5; i++){
+          localStorage.removeItem("nombrereserva" + i);
+          localStorage.removeItem("estadoreserva" + i);
+        }
 
         window.location.href = "{{url_for('turnos_disponibles')}}";
       }

@@ -1,22 +1,31 @@
-* {
+* { 
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
+} /* resetea el estilo de todos los elementos para que se vea igual sin importar el navegador*/
 
 body {
   background-image: url("/static/img/background.png");
-  background-repeat: no-repeat;
+  background-attachment: fixed;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
   background-position: center center;
   background-size: cover;
-  height: 90vh;
-  width: 100%;
   overflow-x: none;
   margin: 0;
   padding: 0;
+  font-family: inter;
+}
+
+@font-face {
+  font-family: moto;
+  src: url("/static/img/moto-verse.ttf");
+}
+
+@font-face {
+  font-family: inter;
+  src: url(InterVariable.ttf);
 }
 
 .Centerstyle {
@@ -40,38 +49,36 @@ body {
   justify-self: left;
 }
 
-@font-face {
-  font-family: moto;
-  src: url("/static/img/moto-verse.ttf");
-}
-
-@font-face {
-  font-family: inter;
-  src: url(InterVariable.ttf);
-}
-
-.titulos2 {
+.nosotros {
   text-align: center;
   font-family: moto;
+  font-size: larger;
   color: #e35837;
-  text-shadow: 1px 8px 10px rgb(40, 43, 44);
+  text-shadow: 1px 8px 15px rgb(40, 43, 44);
   position: absolute;
-  top: 95%;
+  top: 93%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  text-decoration: none;
+  transform: translateX(-50%);
+  transition: 0.3s ease-in-out;
 }
 
-a {
-  text-decoration: none;
+.nosotros:hover {
+  transform: translateX(-50%) scale(1.2);
 }
 
 .flecha {
   position: absolute;
   top: 0%;
   left: 0%;
-  height: 30px;
+  height: 40px;
   margin: 0;
   padding: 0;
+  transition: .2s ease-in-out;
+}
+
+.flecha:hover{
+  transform: scale(1.2);
 }
 
 .flechacontenedor {
@@ -83,9 +90,6 @@ a {
   z-index: 9999;
   pointer-events: auto;
   display: block;
-  padding-left: 20px;
-}
-
-input {
-  padding: 5px;
+  padding-top: 100px;
+  padding-left: 100px;
 }

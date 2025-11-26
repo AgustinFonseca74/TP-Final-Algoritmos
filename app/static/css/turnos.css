@@ -1,13 +1,14 @@
 body {
   background-image: url("/static/img/background.png");
+  background-attachment: fixed;
   background-size: cover;
 }
 
 .contenedor {
-  display: flex;
-  justify-content: center;
-  gap: 50px;
-  margin-top: 30px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .tablaestilo {
@@ -26,7 +27,8 @@ table {
   width: 100%;
   margin: 5px auto;
   border-collapse: collapse;
-  color: #e35837;
+  color: whitesmoke;
+  text-shadow: 1px 1px 3px black;
 }
 
 table,
@@ -44,56 +46,12 @@ a {
   transition: 0.2s ease-in-out;
 }
 
-.cajainput {
-  text-align: center;
-  padding: 20px;
-  box-shadow: 1px 5px 10px black;
-  backdrop-filter: blur(10px);
-  width: 600px;
-  margin: 0 auto;
-}
-
-.cajainput input {
-  border: 0px;
-  box-shadow: 1px 1px 10px black;
-  background: rgba(255, 255, 255, 0.2);
-  height: 25px;
-  width: 250px;
-}
-
-.cajainput label {
-  font-size: 20px;
-}
-
-.cajainput button {
-  width: 30%;
-  background: rgba(233, 227, 227, 1);
-  height: 35px;
-  border-radius: 10px;
-}
-
-@font-face {
-  font-family: moto;
-  src: url("/static/img/moto-verse.ttf");
-}
-
 .titulos {
   text-align: center;
   font-family: moto;
   color: #e35837;
   text-shadow: 1px 8px 10px rgb(40, 43, 44);
   font-size: 25px;
-}
-
-.boton {
-  text-align: center;
-  width: 180px;
-  padding: 20px;
-  backdrop-filter: blur(10px);
-  box-shadow: 1px 5px 10px black;
-  display: flex;
-  margin: 9px;
-  font-family: moto;
 }
 
 .botonesregistro {
@@ -116,47 +74,64 @@ a {
   display: none;
 }
 
-.reservarboton {
+.boton {
   display: inline-block;
   padding: 20px 40px;
   border: 1px solid whitesmoke;
-  background: #00cc0780;
   border-radius: 5px;
   text-decoration: none;
-  transition: 0.2s ease-in-out;
   width: 200px;
   margin: 20px;
-
   text-align: center;
   font-family: moto;
-  color: #e35837;
   text-shadow: 1px 8px 10px rgb(40, 43, 44);
   text-decoration: none;
+  transition: .2s ease-in-out ;
 }
 
-.reservarboton:hover {
+.boton:hover {
   transform: scale(1.1);
 }
 
-.cancelarboton {
-  display: inline-block;
-  padding: 20px 40px;
-  border: 1px solid whitesmoke;
-  background: #7e070780;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: 0.2s ease-in-out;
-  width: 200px;
-  margin: 20px;
+.reservar{
+  color: #e35837;
+  background: #00cc0780;
+  transition: .2s ease-in-out ;
+}
 
-  text-align: center;
-  font-family: moto;
+.reservar:hover{
+  transform: scale(1.1);
+}
+
+.cancelar{
   color: #ca3814;
-  text-shadow: 1px 8px 10px rgb(40, 43, 44);
-  text-decoration: none;
+  background: #7e070780;
+  transition: .2s ease-in-out ;
+}
+
+.cancelar:hover{
+  transform: scale(1.1);
+}
+
+.limpiar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  margin-bottom: 60px;
+  margin-left: 50px;
+  text-align: center;
+  width: 180px;
+  padding: 20px;
+  background: none;
+  backdrop-filter: blur(10px);
+  box-shadow: 1px 5px 10px black;
+  display: flex;
+  font-family: moto;
+  border-radius: 20px;
+  border: 1px solid whitesmoke;
   transition: ease-in-out 0.2s;
 }
 
-.cancelarboton:hover {
+.limpiar:hover {
   transform: scale(1.1);
 }
