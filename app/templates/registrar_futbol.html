@@ -49,11 +49,11 @@ endblock %} {% block content %}
           minlength="13"
           maxlength="13"
           pattern="\d{13}"
-          title="El numero debe contener 13 digitos, solo caracteres numericos y no contar con espacios"
+          title="Por favor, intorudce un numero válido. El numero debe contener 13 digitos, solo caracteres numericos y no contar con espacios"
         /><br /><br />
 
         <label>Correo electronico</label><br /><br />
-        <input type="email" required /><br /><br />
+        <input type="email" pattern="^.+@[^\.]+\..{2,}$" title="Por favor, introduce un correo válido (ej: nombre@dominio.com)" required /><br /><br />
 
         <br /><br />
 

@@ -53,7 +53,7 @@ endblock %} {% block content %}
         /><br /><br />
 
         <label>Correo electronico</label><br /><br />
-        <input type="email" required /><br /><br />
+        <input type="email" pattern="^.+@[^\.]+\..{2,}$" title="Por favor, introduce un correo válido (ej: nombre@dominio.com)" required /><br /><br />
 
         <br /><br />
 
