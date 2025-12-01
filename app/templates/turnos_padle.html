@@ -27,6 +27,7 @@ endblock %} {% block content %}
         <h3 class="titulos">PADLE</h3>
         <table>
           <tr>
+            <td>Nombre</td>
             <td>Estado</td>
             <td>Hora</td>
           </tr>
@@ -144,12 +145,12 @@ endblock %} {% block content %}
 
     <script>
       function borrardatos() {
-        for (let i = 1; i <= 5; i++){
+        for (let i = 1; i <= 5; i++) {
           localStorage.removeItem("2nombrereserva" + i);
           localStorage.removeItem("2estadoreserva" + i);
         }
 
-          window.location.href = "{{url_for('turnos_padle')}}";
+        window.location.href = "{{url_for('turnos_padle')}}";
       }
     </script>
   </body>

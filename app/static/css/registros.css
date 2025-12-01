@@ -3,12 +3,12 @@ body {
   background-size: cover;
 }
 
-.fondofutbol{
-   background-image: url("/static/img/fondofutbol.jpg");
+.fondofutbol {
+  background-image: url("/static/img/fondofutbol.jpg");
 }
 
-.fondopadel{
-   background-image: url("/static/img/fondopadel.jpg");
+.fondopadel {
+  background-image: url("/static/img/fondopadel.jpg");
 }
 
 .titulos {
@@ -46,7 +46,7 @@ td {
   backdrop-filter: blur(10px);
   width: 600px;
   margin: 0 auto;
-  margin-top: 150px;
+  margin-top: 100px;
   border-radius: 20px;
 }
 
@@ -73,14 +73,14 @@ td {
   font-size: large;
   color: whitesmoke;
   text-shadow: 1px 1px 3px black;
-  transition: .2s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
 .cajainput button:hover {
   transform: scale(1.1);
 }
 
-.textoregistro{
+.textoregistro {
   color: whitesmoke;
   text-shadow: 1px 1px 3px black;
 }
