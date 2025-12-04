@@ -113,7 +113,7 @@ endblock %} {% block content %}
       </div>
     </div>
 
-    <button class="limpiar" type="button" onclick="borrardatos()">
+    <button class="limpiar" type="button" onclick="limpiartabla()">
       Limpiar tabla
     </button>
 
@@ -124,9 +124,9 @@ endblock %} {% block content %}
         document.getElementById("2estado" + i).textContent =
           localStorage.getItem("2estadoreserva" + i) || "disponible";
 
-        let estadoreserva = localStorage.getItem("2estadoreserva" + i);
+        let verificarestado = localStorage.getItem("2estadoreserva" + i);
 
-        if (estadoreserva === "No Disponible") {
+        if (verificarestado === "No Disponible") {
           document.getElementById("2reservar" + i).classList.add("ocultar");
         } else {
           document.getElementById("2cancelar" + i).classList.add("ocultar");
@@ -144,13 +144,13 @@ endblock %} {% block content %}
     </script>
 
     <script>
-      function borrardatos() {
+      function limpiartabla() {
         for (let i = 1; i <= 5; i++) {
           localStorage.removeItem("2nombrereserva" + i);
           localStorage.removeItem("2estadoreserva" + i);
         }
 
-        window.location.href = "{{url_for('turnos_padle')}}";
+        location.reload();
       }
     </script>
   </body>
