@@ -87,8 +87,6 @@ body {
   left: 0;
   height: 40px;
   width: auto;
-  z-index: 9999;
-  pointer-events: auto;
   display: block;
   padding-top: 100px;
   padding-left: 100px;
